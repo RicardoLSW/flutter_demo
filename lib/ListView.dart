@@ -12,29 +12,39 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CustomizeWidget(),
+      home: SampleAppPage(),
     );
   }
 }
 
-class CustomizeWidget extends StatelessWidget {
-  var textStyle = TextStyle(
-      fontSize: 32.0, color: Colors.cyan, fontWeight: FontWeight.w600);
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  _getListData() {
+    List<Widget> widgets = [];
+    for (int i = 0; i < 100; i++) {
+      widgets.add(Padding(
+        padding: EdgeInsets.all(10.0),
+        child: Text('Row $i'),
+      ));
+    }
+    return widgets;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Sample App"),
-        ),
-        body: ListView(
-          children: <Widget>[
-            Text('row 1'),
-            Text('row 2'),
-            Text('row 3'),
-            Text('row 4'),
-            Text('row 5'),
-            Text('row 6'),
-          ],
-        ));
+      appBar: AppBar(
+        title: Text('Sample App'),
+      ),
+      body: ListView(
+        children: _getListData(),
+      ),
+    );
   }
 }
