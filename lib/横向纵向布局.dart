@@ -17,6 +17,28 @@ class MyApp extends StatelessWidget {
   }
 }
 
+//class CustomizeWidget extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    return Scaffold(
+//      appBar: AppBar(
+//        title: Text("Sample App"),
+//      ),
+//      body: Center(
+//        child: Row(
+//          mainAxisAlignment: MainAxisAlignment.center,
+//          children: <Widget>[
+//            Text('row 1'),
+//            Text('row 2'),
+//            Text('row 3'),
+//            Text('row 4'),
+//          ],
+//        ),
+//      ),
+//    );
+//  }
+//}
+
 class CustomizeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
